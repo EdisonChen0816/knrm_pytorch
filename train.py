@@ -16,7 +16,11 @@ from dataprocessors.dataset import Dataset
 from torch.utils.data import DataLoader
 
 
-def train(train_iter, eval_iter, model, config, logger):
+config = loadyaml('data/config/knrm.yaml')
+logger = setlogger(config)
+
+
+def train(train_iter, eval_iter, model, config):
     # config
     # model = model.to(config['device'])
     optimizer = torch.optim.Adam(model.parameters(), lr=config['learning_rate'], betas=[0.9, 0.999], eps=1e-8, weight_decay=0)
@@ -54,12 +58,11 @@ def train(train_iter, eval_iter, model, config, logger):
                             }
                     torch.save(checkpoint, config['saved_model'])
             if step % 100 == 0:
-                ave_accu = eval(eval_iter, model, config, logger)
+                ave_accu = eval(eval_iter, model, config)
                 logger.info(f"Step: {step} |Epoch:{epoch}, | train loss: {loss.detach().cpu().numpy():.{4}} | ave_accu:{ave_accu} | F1: {F1}")
-    torch.save(model, config['saved_model'])
 
 
-def eval(eval_iter, model, config, logger):
+def eval(eval_iter, model, config):
     scores = []
     batch = 0
     model.eval()
@@ -95,9 +98,7 @@ def metrics(labels, y_pred):
 
 
 if __name__ == '__main__':
-    config = loadyaml('data/config/knrm.yaml')
     # config = loadyaml('data/config/cknrm.yaml')
-    logger = setlogger(config)
     torch.backends.cudnn.benchmark = True
     # print(f"config:{config}")
     # set the random seed manually for reproducibility.
@@ -123,4 +124,4 @@ if __name__ == '__main__':
     model = KNRM(config, embedding).to(config['device'])
     # model = CKNRM(config, embedding).to(config['device'])
     print(f"Begin to train ......")
-    train(train_loader, eval_loader, model, config, logger)
+    train(train_loader, eval_loader, model, config)
