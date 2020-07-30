@@ -36,6 +36,7 @@ def train(train_iter, eval_iter, model, config, logger):
             # loss = F.binary_cross_entropy(score, y)
             loss = certerion(score, y)
             loss.backward()
+            # print(loss.item())
             optimizer.step()
             step += 1
             if step % 10 == 0:
@@ -55,7 +56,6 @@ def train(train_iter, eval_iter, model, config, logger):
             if step % 100 == 0:
                 ave_accu = eval(eval_iter, model, config, logger)
                 logger.info(f"Step: {step} |Epoch:{epoch}, | train loss: {loss.detach().cpu().numpy():.{4}} | ave_accu:{ave_accu} | F1: {F1}")
-                # print("Step: {step} |Epoch:{epoch}, | train loss: {loss.detach().cpu().numpy():.{4}} | ave_accu:{ave_accu} | F1: {F1}")
     torch.save(model, config['saved_model'])
 
 
