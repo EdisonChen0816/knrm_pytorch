@@ -1,0 +1,31 @@
+# APPNAME: knrm
+# LANGUAGE: ZH
+
+
+# vocab
+datapath: data/atec_nlp_sim_train.csv
+trainpath: data/train.csv
+testpath: data/test.csv
+evalpath: data/poc_test.csv
+
+# stopwords: data/stopwords_cn.txt
+user_dict: data/user_dict.txt
+
+# word2vec
+embed: data/embedding/w2v.model
+
+# model
+seed: 10
+n_kernels: 11
+query_max_len: 20
+target_max_len: 20
+batch_size: 48
+epochs: 16
+learning_rate: 0.001
+saved_model: data/knrm_model.pt
+
+# logger setting
+LogLevel_Console: 10
+LogLevel_File: 10
+LogFile: data/log/ssc_service.log
+LogFormat: '%(asctime)s|%(levelname)s:%(message)s'

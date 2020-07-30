@@ -1,0 +1,40 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="20">
+            <item index="0" class="java.lang.String" itemvalue="logger" />
+            <item index="1" class="java.lang.String" itemvalue="yagmail" />
+            <item index="2" class="java.lang.String" itemvalue="tensorflow" />
+            <item index="3" class="java.lang.String" itemvalue="seqeval" />
+            <item index="4" class="java.lang.String" itemvalue="zhconv" />
+            <item index="5" class="java.lang.String" itemvalue="ruamel.yaml" />
+            <item index="6" class="java.lang.String" itemvalue="GPUtil" />
+            <item index="7" class="java.lang.String" itemvalue="keyring" />
+            <item index="8" class="java.lang.String" itemvalue="gensim" />
+            <item index="9" class="java.lang.String" itemvalue="jieba" />
+            <item index="10" class="java.lang.String" itemvalue="pyemd" />
+            <item index="11" class="java.lang.String" itemvalue="annoy" />
+            <item index="12" class="java.lang.String" itemvalue="configparser" />
+            <item index="13" class="java.lang.String" itemvalue="redis-py-cluster" />
+            <item index="14" class="java.lang.String" itemvalue="pyahocorasick" />
+            <item index="15" class="java.lang.String" itemvalue="xgboost" />
+            <item index="16" class="java.lang.String" itemvalue="etornado" />
+            <item index="17" class="java.lang.String" itemvalue="redis" />
+            <item index="18" class="java.lang.String" itemvalue="sqlalchemy" />
+            <item index="19" class="java.lang.String" itemvalue="retry" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N801" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
