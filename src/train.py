@@ -1,26 +1,17 @@
-# -*- coding:utf-8 -*-
-
-
+# encoding=utf-8
 import torch
-import torch.nn.functional as F
 import torch.nn as nn
-
-from utils.utils import loadyaml
-from dataprocessors.tokenizer import Segment_jieba
-from dataprocessors.w2v import Embedding
-from dataprocessors.vocab import Vocab
-from models.knrm import KNRM
-from models.cknrm import CKNRM
-from utils.logger import setlogger
-from dataprocessors.dataset import Dataset
+from src.utils.utils import loadyaml
+from src.dataprocessors.tokenizer import Segment_jieba
+from src.dataprocessors.w2v import Embedding
+from src.dataprocessors.vocab import Vocab
+from src.models.knrm import KNRM
+from src.utils.logger import setlogger
+from src.dataprocessors.dataset import Dataset
 from torch.utils.data import DataLoader
 
 
-config = loadyaml('data/config/knrm.yaml')
-logger = setlogger(config)
-
-
-def train(train_iter, eval_iter, model, config):
+def train(train_iter, eval_iter, model, config, logger):
     # config
     # model = model.to(config['device'])
     optimizer = torch.optim.Adam(model.parameters(), lr=config['learning_rate'], betas=[0.9, 0.999], eps=1e-8, weight_decay=0)
@@ -58,11 +49,11 @@ def train(train_iter, eval_iter, model, config):
                             }
                     torch.save(checkpoint, config['saved_model'])
             if step % 100 == 0:
-                ave_accu = eval(eval_iter, model, config)
+                ave_accu = test(eval_iter, model, config)
                 logger.info(f"Step: {step} |Epoch:{epoch}, | train loss: {loss.detach().cpu().numpy():.{4}} | ave_accu:{ave_accu} | F1: {F1}")
 
 
-def eval(eval_iter, model, config):
+def test(eval_iter, model, config):
     scores = []
     batch = 0
     model.eval()
@@ -79,7 +70,6 @@ def eval(eval_iter, model, config):
         accu = correct.detach().cpu().numpy()/ y_predict.size()[0]
         scores.append(accu)
         batch += 1
-        # logger.info(f"accu:{accu.detach().numpy()}")
     model.train()
     return sum(scores)/batch
 
@@ -98,6 +88,8 @@ def metrics(labels, y_pred):
 
 
 if __name__ == '__main__':
+    config = loadyaml('../conf/knrm.yaml')
+    logger = setlogger(config)
     # config = loadyaml('data/config/cknrm.yaml')
     torch.backends.cudnn.benchmark = True
     # print(f"config:{config}")
@@ -115,13 +107,13 @@ if __name__ == '__main__':
     print(f"vocab length: {len(vocab)}")
     print(f"Begin to build dataset")
     train_dataset = Dataset(config['trainpath'], segment, vocab.word2idx, config)
-    eval_dataset = Dataset(config['evalpath'], segment, vocab.word2idx, config)
+    test_dataset = Dataset(config['evalpath'], segment, vocab.word2idx, config)
     # print(train_dataset[3])
     print(f"Begin to buidl train_loader")
     train_loader = DataLoader(train_dataset, batch_size=config['batch_size'], shuffle=True, num_workers=8)
-    eval_loader = DataLoader(eval_dataset, batch_size=config['batch_size'], shuffle=True, num_workers=8)
+    test_loader = DataLoader(test_dataset, batch_size=config['batch_size'], shuffle=True, num_workers=8)
     print(f"Init the model")
     model = KNRM(config, embedding).to(config['device'])
     # model = CKNRM(config, embedding).to(config['device'])
     print(f"Begin to train ......")
-    train(train_loader, eval_loader, model, config)
+    train(train_loader, test_loader, model, config)

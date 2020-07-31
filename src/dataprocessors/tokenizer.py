@@ -1,6 +1,4 @@
-#!/usr/bin/env python
-# _*_coding=utf-8_*_
-
+# encoding=utf-8
 import codecs
 import os
 import re
@@ -8,13 +6,7 @@ import jieba
 
 
 class Segment_base:
-    """
-        Description:
-            Base independent for segment service
 
-        Input:
-
-    """
     def __init__(self, stopwords_path=None):
         self.stopwords = {}
         self.__load_stopwords(stopwords_path)
@@ -104,7 +96,4 @@ class Segment_hanlp(Segment_base):
 
 
 if __name__ == '__main__':
-    segment = Segment_jieba(stopwords_path='/Users/chuan/Project/data_lake/cn_stopwords.txt')
-    example = u"公司在哪儿？"
-    seg_result = segment.seg(example, ifremove=False)
-    print(seg_result)
+    pass

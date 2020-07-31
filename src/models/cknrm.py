@@ -1,12 +1,9 @@
-# -*- coding:utf-8 -*-
-
-
+# encoding=utf-8
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
-from models.model_utils import kernel_mu
-from models.model_utils import kernel_sigma
+from src.models.model_utils import kernel_mu
+from src.models.model_utils import kernel_sigma
 
 
 class CKNRM(nn.Module):
@@ -65,10 +62,6 @@ class CKNRM(nn.Module):
         output = torch.sigmoid(self.dense(log_pooling_sums))
         output = torch.squeeze(output)
         return output
-
-    @classmethod
-    def _kernel_layer(cls, mu, sigma):
-        pass
 
 
 if __name__ == "__main__":

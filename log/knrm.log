@@ -1,0 +1,5 @@
+2020-07-31 20:29:00,626|INFO:Step One: load w2v file successful!
+2020-07-31 20:39:19,380|INFO:Step One: load w2v file successful!
+2020-07-31 20:42:24,723|INFO:Step One: load w2v file successful!
+2020-07-31 20:43:58,560|INFO:Step One: load w2v file successful!
+2020-07-31 20:45:09,283|INFO:Step: 100 |Epoch:1, | train loss: 0.2706 | ave_accu:0.021187882913546556 | F1: 0.1875

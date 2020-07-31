@@ -1,8 +1,5 @@
-# -*- coding:utf-8 -*-
-
-
+# encoding=utf-8
 import os
-
 from gensim.models import KeyedVectors
 import numpy as np
 
@@ -63,5 +60,4 @@ class Embedding:
 
 
 if __name__ == '__main__':
-    emb = Embedding('/Users/chuan/Project/ifchange/ssc-bot/data/embedding/w2v.model')
-    print(f"vector_size: {emb.vector_size}")
+    pass

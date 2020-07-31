@@ -1,9 +1,6 @@
-# -*- coding:utf-8
-
-
+# encoding=utf-8
 import os
 import codecs
-
 import yaml
 
 
@@ -18,3 +15,7 @@ def loadyaml(path):
         with codecs.open(path, 'r') as yf:
             doc = yaml.safe_load(yf)
     return doc
+
+
+if __name__ == "__main__":
+    pass

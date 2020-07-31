@@ -1,12 +1,9 @@
-# -*- coding:utf-8 -*-
-
-
+# encoding=utf-8
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
-from models.model_utils import kernel_mu
-from models.model_utils import kernel_sigma
+from src.models.model_utils import kernel_mu
+from src.models.model_utils import kernel_sigma
 
 
 class KNRM(nn.Module):

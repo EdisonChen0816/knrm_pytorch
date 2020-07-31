@@ -19,42 +19,42 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b9ee4a1-a4f0-4a0c-8bb9-7322940696f3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/knrm_pytorch.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/atec_nlp_sim_train.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/atec_nlp_sim_train_add.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/config/cknrm.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/config/knrm.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/log/ssc_service.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/poc_test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/train.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/user_dict.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataprocessors/dataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataprocessors/tokenizer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataprocessors/vocab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataprocessors/w2v.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/cknrm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/cknrm_features.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/knrm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/model_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/data_split.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/data_statistical.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="7b9ee4a1-a4f0-4a0c-8bb9-7322940696f3" name="Default Changelist" comment="fix bug">
+      <change afterPath="$PROJECT_DIR$/log/cknrm.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/knrm.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/knrm_pytorch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/knrm_pytorch.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/config/cknrm.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/conf/cknrm.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/config/knrm.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/conf/knrm.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/log/ssc_service.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataprocessors/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataprocessors/dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataprocessors/tokenizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataprocessors/tokenizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataprocessors/vocab.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataprocessors/vocab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataprocessors/w2v.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataprocessors/w2v.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/cknrm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/cknrm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/cknrm_features.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/cknrm_features.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/knrm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/knrm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/model_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/model_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data_split.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data_statistical.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,11 +68,67 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\workspace\python\knrm_pytorch\src" />
+      <recent name="C:\workspace\python\knrm_pytorch\conf" />
+      <recent name="C:\workspace\python\knrm_pytorch\model\w2v" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\workspace\python\knrm_pytorch" />
     </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="knrm_pytorch" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="knrm_pytorch" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\workspace\python\knrm_pytorch\src\train.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.train" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -85,6 +141,28 @@
       <option name="presentableId" value="Default" />
       <updated>1596084414299</updated>
     </task>
+    <task id="LOCAL-00001" summary="上传代码">
+      <created>1596084625010</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1596084625010</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix bug">
+      <created>1596088143737</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1596088143737</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix bug">
+      <created>1596091467492</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1596091467492</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,5 +175,45 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="上传代码" />
+    <MESSAGE value="fix bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="391" y="141" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596198467281">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="391" y="141" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1596198467281" />
+    <state width="1259" height="220" key="GridCell.Tab.0.bottom" timestamp="1596199436146">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="220" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1596199436146" />
+    <state width="1259" height="220" key="GridCell.Tab.0.center" timestamp="1596199436146">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="220" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1596199436146" />
+    <state width="1259" height="220" key="GridCell.Tab.0.left" timestamp="1596199436146">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="220" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1596199436146" />
+    <state width="1259" height="220" key="GridCell.Tab.0.right" timestamp="1596199436146">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="220" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1596199436146" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1596086134874">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1596086134874" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1596091468930">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1596091468930" />
+    <state x="339" y="72" width="603" height="536" key="find.popup" timestamp="1596189397862">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="339" y="72" width="603" height="536" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1596189397862" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+# encoding=utf-8
 
 
 def kernel_mu(n_kernels):

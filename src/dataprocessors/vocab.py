@@ -1,8 +1,5 @@
-# -*- coding:utf-8 -*-
-
-
+# encoding=utf-8
 import os
-
 from collections import defaultdict
 
 
@@ -28,13 +25,6 @@ class Vocab:
                 self.idx2word = open(vocab_file).read().strip().split('\n')
                 self.word2idx = dict(zip(self.idx2word, range(len(self.idx2word))))
 
-#    @staticmethod
-#    def _clean_text(text):
-#        """Text filter for Chinese corpus, only keep CN character."""
-#        re_non_ch = re.compile(ur'[^\u4e00-\u9fa5]+')
-#        text = text.decode('utf-8').strip(' ')
-#        text = re_non_ch.sub('', text)
-#        return text
     def add_BE(self):
         # add pad word
         self.idx2word.insert(0, '<PAD>')
