@@ -18,7 +18,7 @@ target_max_len: 20
 batch_size: 48
 epochs: 16
 learning_rate: 0.001
-saved_model: data/knrm_model.pt
+saved_model: model/knrm_model.pt
 
 # logger setting
 LogLevel_Console: 10

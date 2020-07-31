@@ -21,7 +21,7 @@ learning_rate: 0.001
 out_kernel: 128
 max_grams: 3
 device: cpu
-saved_model: data/cknrm_model.pt
+saved_model: model/cknrm_model.pt
 
 # logger setting
 LogLevel_Console: 10
