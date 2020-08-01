@@ -10,6 +10,7 @@ from src.dataprocessors.dataset import Dataset
 from torch.utils.data import DataLoader
 from src.train import train
 from src.test import test
+import os
 
 
 def train_model():
