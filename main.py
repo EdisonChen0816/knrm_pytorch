@@ -75,5 +75,6 @@ def test_model():
 
 
 if __name__ == '__main__':
-    train_model()
-    #test_model()
+    # train_model()
+    # 0.9788262990696657
+    test_model()

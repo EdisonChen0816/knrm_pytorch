@@ -25,15 +25,15 @@ class KNRM(nn.Module):
         self.sigmas = torch.FloatTensor(kernel_sigma(self.config['n_kernels']))
         self.sigmas = self.sigmas.view(1, 1, 1, self.config['n_kernels']).to(self.config['device'])   # (1, 1, 1, n_kernels)
 
-    def interaction_matrix(self, q_emb_norm, t_emb_norm, q_mask, t_mask):
+    def interaction_matrix(self, q_emb_norm, d_emb_norm, q_mask, t_mask):
         # translation matrix
-        # match_matrix: (batch_size * query_length * title_length * 1)
-        match_matrix = torch.bmm(q_emb_norm, torch.transpose(t_emb_norm, 1, 2)).view(q_emb_norm.size()[0],
-                                                                                     q_emb_norm.size()[1], t_emb_norm.size()[1], 1)
+        # match_matrix: (batch_size * query_length * doc_length * 1)
+        match_matrix = torch.bmm(q_emb_norm, torch.transpose(d_emb_norm, 1, 2)).view(q_emb_norm.size()[0],
+                                                                                     q_emb_norm.size()[1], d_emb_norm.size()[1], 1)
         # RBF Kernel layers
-        # kernel_pooling: batch_size * query_length * title_length * n_kernels
+        # kernel_pooling: batch_size * query_length * doc_length * n_kernels
         kernel_pooling = torch.exp(-((match_matrix - self.mus) ** 2) / (2 * (self.sigmas ** 2)))
-        # kernel_pooling_row: batch_size * query_length  * title_length * n_kernels
+        # kernel_pooling_row: batch_size * query_length  * doc_length * n_kernels
         kernel_pooling_row = kernel_pooling * t_mask
         # pooling_row_sum -> batch_size * query_length * n_kernels
         pooling_row_sum = torch.sum(kernel_pooling_row, 2)
@@ -43,18 +43,18 @@ class KNRM(nn.Module):
         log_pooling_sum = torch.sum(log_pooling, 1)
         return log_pooling_sum
 
-    def forward(self, query, title, q_mask, t_mask):
-        # query|title to query embedding
+    def forward(self, query, doc, q_mask, d_mask):
+        # query|doc to query embedding
         q_emb = self.embed_layer(query)
-        t_emb = self.embed_layer(title)
+        t_emb = self.embed_layer(doc)
         # normalize the q_emb| t_emb
         q_emb_norm = F.normalize(q_emb, p=2, dim=2)
         t_emb_norm = F.normalize(t_emb, p=2, dim=2)
         # reshape the mask the size
         q_mask = q_mask.view(q_mask.size()[0], q_mask.size()[1], 1)
-        t_mask = t_mask.view(t_mask.size()[0], 1, t_mask.size()[1], 1)
+        d_mask = d_mask.view(d_mask.size()[0], 1, d_mask.size()[1], 1)
         # build interation matrix
-        log_sum_pooling = self.interaction_matrix(q_emb_norm, t_emb_norm, q_mask, t_mask)
+        log_sum_pooling = self.interaction_matrix(q_emb_norm, t_emb_norm, q_mask, d_mask)
         # connect the dense layers
         # output -> batch_size * 1
         # pair wise format
